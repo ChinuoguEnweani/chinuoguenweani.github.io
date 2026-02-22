@@ -1133,12 +1133,13 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 14px 12px;
+  padding: 14px 0;
 }
 
-/* Footer navigation wrapper */
+/* Footer navigation wrapper aligned to the same centered content width */
 .footer-nav {
-  width: 100%;
+  width: min(94vw, 1400px);
+  margin: 0 auto;
 }
 
 /* Footer unordered list layout for social icons */
@@ -1512,6 +1513,11 @@ body {
 
   /* Keep basket wrapper balanced on mobile */
   .cart-section {
+    width: min(96vw, 860px);
+  }
+
+  /* Keep footer content aligned with mobile page content width */
+  .footer-nav {
     width: min(96vw, 860px);
   }
 
