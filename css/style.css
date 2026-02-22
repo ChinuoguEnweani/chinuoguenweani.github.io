@@ -1144,11 +1144,12 @@ body {
 
 /* Footer unordered list layout for social icons */
 .footer-nav-list {
+  width: min(94vw, 1400px);
   list-style: none;
   display: flex;
   align-items: center;
   gap: 12px;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -1519,6 +1520,12 @@ body {
   /* Keep footer content aligned with mobile page content width */
   .footer-nav {
     width: min(96vw, 860px);
+  }
+
+  /* Keep footer icons/copyright naturally aligned within the mobile footer wrapper */
+  .footer-nav-list {
+    width: 100%;
+    margin: 0;
   }
 
   /* Stack basket heading elements naturally on mobile */
