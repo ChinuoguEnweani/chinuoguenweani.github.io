@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Page metadata and shared stylesheet link -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Silva Noctis Lumen | Jermaine Fotography</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Main wrapper containing header, product content, and footer -->
+  <div class="page">
+    <!-- Header section with brand logo -->
+    <header class="header">
+      <!-- Dedicated top-right basket section -->
+      <section class="header-basket" aria-label="Basket quick link">
+        <a class="basket-link" href="basket.html" aria-label="Open basket page">
+          <img class="basket-icon" src="images/basket.png" alt="Basket"> <!-- Icon by https://icons8.com/  -->
+        </a>
+      </section>
+
+      <!-- Clickable logo that always redirects to the home page -->
+      <a class="header-logo-link" href="index.html">
+        <img class="header-logo" src="images/logo.png" alt="Jermaine Fotography logo"> <!-- Logo generated with https://logo.com/  -->
+      </a>
+
+      <!-- Mobile menu button with three-line icon -->
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span class="menu-toggle-line"></span>
+        <span class="menu-toggle-line"></span>
+        <span class="menu-toggle-line"></span>
+      </button>
+
+      <!-- Main navigation using an unordered list -->
+      <nav class="main-nav" id="primary-nav" aria-label="Primary navigation">
+        <!-- Close button shown at top-right of the opened mobile menu -->
+        <button class="menu-close" type="button" aria-label="Close navigation menu">
+          X
+        </button>
+
+        <ul class="main-nav-list">
+          <!-- Portfolio item using a native details/summary click dropdown -->
+          <li class="main-nav-item">
+            <details class="dropdown">
+              <summary class="dropdown-summary">
+                <span class="main-nav-link">Portfolio</span>
+                <span class="dropdown-arrow" aria-hidden="true">▾</span>
+              </summary>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-link" href="landscape.html">Landscape</a></li>
+                <li><a class="dropdown-link" href="still-life.html">Still life</a></li>
+              </ul>
+            </details>
+          </li>
+
+          <!-- Standard navigation items -->
+          <li class="main-nav-item"><a class="main-nav-link" href="about.html">About</a></li>
+          <li class="main-nav-item"><a class="main-nav-link" href="purchase-prints.html" aria-current="page">Purchase prints</a></li>
+        </ul>
+
+        <!-- Social icons shown inside the mobile full-screen menu -->
+        <ul class="mobile-menu-social" aria-label="Mobile social links">
+          <li>
+            <a class="mobile-menu-icon-link" href="#" aria-label="Instagram">
+              <img class="mobile-menu-icon" src="images/instagram.png" alt="Instagram"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+          <li>
+            <a class="mobile-menu-icon-link" href="#" aria-label="Facebook">
+              <img class="mobile-menu-icon" src="images/facebook.png" alt="Facebook"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+          <li>
+            <a class="mobile-menu-icon-link" href="#" aria-label="Email">
+              <img class="mobile-menu-icon" src="images/email.png" alt="Email"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Product detail content area -->
+    <main class="product-detail-main">
+      <section class="product-detail-section" aria-label="Silva Noctis Lumen product details">
+        <!-- Product layout with media on the left and purchase details on the right -->
+        <article class="product-detail-layout product-page"
+          data-product-id="sunflowers-and-lemons"
+          data-product-name="Silva Noctis Lumen"
+          data-product-image="images/still_life.jpg"
+          data-product-type="Vitae penatibus torquent curae, fringilla sem donec, gravida erat."
+          data-product-published="11 January 2026"
+          data-base-price="185">
+
+          <!-- Product image section -->
+          <figure class="detail-media">
+            <img class="detail-image" src="images/still_life.jpg" alt="Silva Noctis Lumen print"> <!-- Image obtained from https://unsplash.com/ -->
+          </figure>
+
+          <!-- Product information and purchase controls -->
+          <section class="detail-summary">
+            <p class="detail-breadcrumb">Home / Products / Silva Noctis Lumen</p>
+            <h1 class="detail-title">Silva Noctis Lumen</h1>
+            <p class="detail-price">From <span class="detail-price-value">£185.00</span> GBP</p>
+            <p class="detail-note">Tax included. Shipping calculated at checkout.</p>
+            <p class="detail-published">Published: 11 January 2026</p>
+
+            <!-- Product variant selector -->
+            <div class="detail-option-group">
+              <label class="detail-option-label" for="size-sunflowers-and-lemons">Size</label>
+              <select class="detail-size-select" id="size-sunflowers-and-lemons" aria-label="Select print size for Silva Noctis Lumen">
+                <option value="A4" data-price="150">A4 (30 x 40 cm)</option>
+                <option value="A3" data-price="185" selected>A3 (40 x 50 cm)</option>
+                <option value="A2" data-price="260">A2 (50 x 70 cm)</option>
+              </select>
+            </div>
+
+            <!-- Product finish selector for print-only or framed option -->
+            <div class="detail-option-group">
+              <label class="detail-option-label" for="format-sunflowers-and-lemons">Finish</label>
+              <select class="detail-format-select" id="format-sunflowers-and-lemons" aria-label="Select print finish for Silva Noctis Lumen">
+                <option value="Print only" data-extra="0" selected>Print only</option>
+                <option value="Framed" data-extra="75">Framed (+£75.00)</option>
+              </select>
+            </div>
+
+            <!-- Quantity selector and add-to-basket action -->
+            <div class="detail-action-row">
+              <div class="product-quantity detail-quantity" role="group" aria-label="Quantity selector for Silva Noctis Lumen">
+                <button class="qty-button detail-qty-decrease" type="button" aria-label="Decrease quantity for Silva Noctis Lumen">-</button>
+                <input class="qty-input detail-qty-input" type="number" min="1" value="1" inputmode="numeric" aria-label="Quantity for Silva Noctis Lumen">
+                <button class="qty-button detail-qty-increase" type="button" aria-label="Increase quantity for Silva Noctis Lumen">+</button>
+              </div>
+              <button class="product-cta detail-add-button" type="button">Add to basket</button>
+            </div>
+            <p class="detail-feedback" aria-live="polite"></p>
+
+            <!-- Product description details -->
+            <h2 class="detail-section-heading">Description</h2>
+            <p class="detail-copy">Aenean tincidunt justo vitae nisl luctus, sed sodales justo convallis. Suspendisse potenti; pretium nec urna ac, rhoncus feugiat sem.</p>
+            <p class="detail-copy">Nam gravida velit in sem egestas, non cursus arcu tincidunt. Quisque gravida est nec eros tincidunt, in pulvinar sapien malesuada.</p>
+            <ul class="detail-feature-list">
+              <li>Donec suscipit risus et ligula dignissim, ac aliquet mauris cursus.</li>
+              <li>Vestibulum commodo nibh sit amet magna tempus, quis tristique sapien pulvinar.</li>
+              <li>Curabitur dictum libero vel tortor interdum, non fringilla leo volutpat.</li>
+              <li>Fusce at magna quis mauris posuere iaculis in nec urna.</li>
+            </ul>
+          </section>
+        </article>
+      </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer class="footer">
+      <!-- Footer social navigation icons -->
+      <nav class="footer-nav" aria-label="Footer social navigation">
+        <ul class="footer-nav-list">
+          <li>
+            <a class="footer-icon-link" href="#" aria-label="Instagram">
+              <img class="footer-icon" src="images/instagram.png" alt="Instagram"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+          <li>
+            <a class="footer-icon-link" href="#" aria-label="Facebook">
+              <img class="footer-icon" src="images/facebook.png" alt="Facebook"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+          <li>
+            <a class="footer-icon-link" href="#" aria-label="Email">
+              <img class="footer-icon" src="images/email.png" alt="Email"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+
+          <!-- Copyright text displayed next to the footer icons -->
+          <li class="footer-copy-item">
+            <span class="footer-copyright">© 2026 Jermaine Fotography</span>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
+
+  <!-- Shared scripts for basket, navigation, and product detail interactions -->
+  <script src="inc/cart.js"></script>
+  <script src="inc/cart-ui.js"></script>
+  <script src="inc/site-nav.js"></script>
+  <script src="inc/product-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Page metadata and stylesheet link -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Still life | Jermaine Fotography</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Main wrapper containing header, content, and footer -->
+  <div class="page">
+    <!-- Header section with logo, basket, and primary navigation -->
+    <header class="header">
+      <!-- Dedicated top-right basket section -->
+      <section class="header-basket" aria-label="Basket quick link">
+        <a class="basket-link" href="basket.html" aria-label="Open basket page">
+          <img class="basket-icon" src="images/basket.png" alt="Basket"> <!-- Icon by https://icons8.com/  -->
+        </a>
+      </section>
+
+      <!-- Clickable logo that always redirects to the home page -->
+      <a class="header-logo-link" href="index.html">
+        <img class="header-logo" src="images/logo.png" alt="Jermaine Fotography logo"> <!-- Logo generated with https://logo.com/  -->
+      </a>
+
+      <!-- Mobile menu button with three-line icon -->
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span class="menu-toggle-line"></span>
+        <span class="menu-toggle-line"></span>
+        <span class="menu-toggle-line"></span>
+      </button>
+
+      <!-- Main navigation using an unordered list -->
+      <nav class="main-nav" id="primary-nav" aria-label="Primary navigation">
+        <!-- Close button shown at top-right of the opened mobile menu -->
+        <button class="menu-close" type="button" aria-label="Close navigation menu">
+          X
+        </button>
+
+        <ul class="main-nav-list">
+          <!-- Portfolio item using a native details/summary click dropdown -->
+          <li class="main-nav-item">
+            <details class="dropdown">
+              <summary class="dropdown-summary">
+                <span class="main-nav-link">Portfolio</span>
+                <span class="dropdown-arrow" aria-hidden="true">▾</span>
+              </summary>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-link" href="landscape.html">Landscape</a></li>
+                <li><a class="dropdown-link" href="still-life.html" aria-current="page">Still life</a></li>
+              </ul>
+            </details>
+          </li>
+
+          <!-- Standard navigation items -->
+          <li class="main-nav-item"><a class="main-nav-link" href="about.html">About</a></li>
+          <li class="main-nav-item"><a class="main-nav-link" href="purchase-prints.html">Purchase prints</a></li>
+        </ul>
+
+        <!-- Social icons shown inside the mobile full-screen menu -->
+        <ul class="mobile-menu-social" aria-label="Mobile social links">
+          <li>
+            <a class="mobile-menu-icon-link" href="#" aria-label="Instagram">
+              <img class="mobile-menu-icon" src="images/instagram.png" alt="Instagram"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+          <li>
+            <a class="mobile-menu-icon-link" href="#" aria-label="Facebook">
+              <img class="mobile-menu-icon" src="images/facebook.png" alt="Facebook"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+          <li>
+            <a class="mobile-menu-icon-link" href="#" aria-label="Email">
+              <img class="mobile-menu-icon" src="images/email.png" alt="Email"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Still life page heading and image gallery -->
+    <main class="gallery-main">
+      <!-- Centered heading for the still life page -->
+      <section class="gallery-page-header" aria-label="Still life page heading">
+        <h1 class="gallery-page-title">Still life</h1>
+      </section>
+
+      <!-- Still life-only gallery using the same masonry layout as the homepage -->
+      <section class="photo-grid" aria-label="Still life photo gallery">
+        <figure class="photo-card photo-card--1">
+          <img src="images/still_life.jpg" alt="Still life photo 1"> <!-- Image obtained from https://unsplash.com/ -->
+        </figure>
+        <figure class="photo-card photo-card--2">
+          <img src="images/still_life_1.jpg" alt="Still life photo 2"> <!-- Image obtained from https://unsplash.com/ -->
+        </figure>
+        <figure class="photo-card photo-card--3">
+          <img src="images/still_life_2.jpg" alt="Still life photo 3"> <!-- Image obtained from https://unsplash.com/ -->
+        </figure>
+        <figure class="photo-card photo-card--4">
+          <img src="images/still_life_3.jpg" alt="Still life photo 4"> <!-- Image obtained from https://unsplash.com/ -->
+        </figure>
+        <figure class="photo-card photo-card--5">
+          <img src="images/still_life_4.jpg" alt="Still life photo 5"> <!-- Image obtained from https://unsplash.com/ -->
+        </figure>
+        <figure class="photo-card photo-card--6">
+          <img src="images/still_life_5.jpg" alt="Still life photo 6"> <!-- Image obtained from https://unsplash.com/ -->
+        </figure>
+      </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer class="footer">
+      <!-- Footer social navigation icons -->
+      <nav class="footer-nav" aria-label="Footer social navigation">
+        <ul class="footer-nav-list">
+          <li>
+            <a class="footer-icon-link" href="#" aria-label="Instagram">
+              <img class="footer-icon" src="images/instagram.png" alt="Instagram"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+          <li>
+            <a class="footer-icon-link" href="#" aria-label="Facebook">
+              <img class="footer-icon" src="images/facebook.png" alt="Facebook"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+          <li>
+            <a class="footer-icon-link" href="#" aria-label="Email">
+              <img class="footer-icon" src="images/email.png" alt="Email"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+
+          <!-- Copyright text displayed next to the footer icons -->
+          <li class="footer-copy-item">
+            <span class="footer-copyright">© 2026 Jermaine Fotography</span>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
+
+  <!-- Shared scripts for basket state, badge UI, and mobile navigation -->
+  <script src="inc/cart.js"></script>
+  <script src="inc/cart-ui.js"></script>
+  <script src="inc/site-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Page metadata and shared stylesheet link -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Purchase prints | Jermaine Fotography</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Main wrapper containing header, products content, and footer -->
+  <div class="page">
+    <!-- Header section with brand logo -->
+    <header class="header">
+      <!-- Dedicated top-right basket section -->
+      <section class="header-basket" aria-label="Basket quick link">
+        <a class="basket-link" href="basket.html" aria-label="Open basket page">
+          <img class="basket-icon" src="images/basket.png" alt="Basket"> <!-- Icon by https://icons8.com/  -->
+        </a>
+      </section>
+
+      <!-- Clickable logo that always redirects to the home page -->
+      <a class="header-logo-link" href="index.html">
+        <img class="header-logo" src="images/logo.png" alt="Jermaine Fotography logo"> <!-- Logo generated with https://logo.com/  -->
+      </a>
+
+      <!-- Mobile menu button with three-line icon -->
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span class="menu-toggle-line"></span>
+        <span class="menu-toggle-line"></span>
+        <span class="menu-toggle-line"></span>
+      </button>
+
+      <!-- Main navigation using an unordered list -->
+      <nav class="main-nav" id="primary-nav" aria-label="Primary navigation">
+        <!-- Close button shown at top-right of the opened mobile menu -->
+        <button class="menu-close" type="button" aria-label="Close navigation menu">
+          X
+        </button>
+
+        <ul class="main-nav-list">
+          <!-- Portfolio item using a native details/summary click dropdown -->
+          <li class="main-nav-item">
+            <details class="dropdown">
+              <summary class="dropdown-summary">
+                <span class="main-nav-link">Portfolio</span>
+                <span class="dropdown-arrow" aria-hidden="true">▾</span>
+              </summary>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-link" href="landscape.html">Landscape</a></li>
+                <li><a class="dropdown-link" href="still-life.html">Still life</a></li>
+              </ul>
+            </details>
+          </li>
+
+          <!-- Standard navigation items -->
+          <li class="main-nav-item"><a class="main-nav-link" href="about.html">About</a></li>
+          <li class="main-nav-item"><a class="main-nav-link" href="purchase-prints.html" aria-current="page">Purchase prints</a></li>
+        </ul>
+
+        <!-- Social icons shown inside the mobile full-screen menu -->
+        <ul class="mobile-menu-social" aria-label="Mobile social links">
+          <li>
+            <a class="mobile-menu-icon-link" href="#" aria-label="Instagram">
+              <img class="mobile-menu-icon" src="images/instagram.png" alt="Instagram"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+          <li>
+            <a class="mobile-menu-icon-link" href="#" aria-label="Facebook">
+              <img class="mobile-menu-icon" src="images/facebook.png" alt="Facebook"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+          <li>
+            <a class="mobile-menu-icon-link" href="#" aria-label="Email">
+              <img class="mobile-menu-icon" src="images/email.png" alt="Email"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Products content area with collection heading and product cards -->
+    <main class="products-main">
+      <section class="products-section" aria-label="Print products">
+        <!-- Collection heading block -->
+        <header class="products-heading">
+          <p class="products-kicker">Products</p>
+          <h1 class="products-title">Featured collection</h1>
+        </header>
+
+        <!-- Product card grid -->
+        <ul class="products-grid">
+          <!-- Randomized placeholder product titles and descriptions for assignment content -->
+          <li class="product-card" data-product-id="turquoise-alpine-lake" data-product-name="Aurelia Ventus Echo" data-product-price="220" data-product-image="images/landscape.jpg" data-product-type="Mollis cras tincidunt lacus, posuere varius nibh, dictum sapien." data-product-published="03 January 2026">
+            <a class="product-thumb-link" href="product-turquoise-alpine-lake.html" aria-label="View Aurelia Ventus Echo print details">
+              <img class="product-thumb" src="images/landscape.jpg" alt="Turquoise Alpine Lake print thumbnail"> <!-- Image obtained from https://unsplash.com/ -->
+            </a>
+            <div class="product-details">
+              <h2 class="product-name">
+                <a class="product-name-link" href="product-turquoise-alpine-lake.html">Aurelia Ventus Echo</a>
+              </h2>
+              <p class="product-type">Mollis cras tincidunt lacus, posuere varius nibh, dictum sapien.</p>
+              <!-- Random publication date metadata for this product -->
+              <p class="product-date">Published: 03 January 2026</p>
+              <p class="product-price">From £220.00 GBP</p>
+              <!-- Quantity and add-to-basket controls for this product -->
+              <div class="product-purchase-controls">
+                <div class="product-quantity" role="group" aria-label="Quantity selector for Aurelia Ventus Echo">
+                  <button class="qty-button qty-decrease" type="button" aria-label="Decrease quantity for Aurelia Ventus Echo">-</button>
+                  <input class="qty-input" type="number" min="1" value="1" inputmode="numeric" aria-label="Quantity for Aurelia Ventus Echo">
+                  <button class="qty-button qty-increase" type="button" aria-label="Increase quantity for Aurelia Ventus Echo">+</button>
+                </div>
+                <button class="product-cta product-add-button" type="button">Add to basket</button>
+              </div>
+              <p class="product-feedback" aria-live="polite"></p>
+            </div>
+          </li>
+
+          <li class="product-card" data-product-id="sunflowers-and-lemons" data-product-name="Silva Noctis Lumen" data-product-price="185" data-product-image="images/still_life.jpg" data-product-type="Vitae penatibus torquent curae, fringilla sem donec, gravida erat." data-product-published="11 January 2026">
+            <a class="product-thumb-link" href="product-sunflowers-and-lemons.html" aria-label="View Silva Noctis Lumen print details">
+              <img class="product-thumb" src="images/still_life.jpg" alt="Sunflowers and Lemons print thumbnail"> <!-- Image obtained from https://unsplash.com/ -->
+            </a>
+            <div class="product-details">
+              <h2 class="product-name">
+                <a class="product-name-link" href="product-sunflowers-and-lemons.html">Silva Noctis Lumen</a>
+              </h2>
+              <p class="product-type">Vitae penatibus torquent curae, fringilla sem donec, gravida erat.</p>
+              <p class="product-date">Published: 11 January 2026</p>
+              <p class="product-price">From £185.00 GBP</p>
+              <div class="product-purchase-controls">
+                <div class="product-quantity" role="group" aria-label="Quantity selector for Silva Noctis Lumen">
+                  <button class="qty-button qty-decrease" type="button" aria-label="Decrease quantity for Silva Noctis Lumen">-</button>
+                  <input class="qty-input" type="number" min="1" value="1" inputmode="numeric" aria-label="Quantity for Silva Noctis Lumen">
+                  <button class="qty-button qty-increase" type="button" aria-label="Increase quantity for Silva Noctis Lumen">+</button>
+                </div>
+                <button class="product-cta product-add-button" type="button">Add to basket</button>
+              </div>
+              <p class="product-feedback" aria-live="polite"></p>
+            </div>
+          </li>
+
+          <li class="product-card" data-product-id="rolling-green-hills" data-product-name="Valen Ridge Sonata" data-product-price="240" data-product-image="images/landscape_3.jpg" data-product-type="Rhoncus integer platea justo, facilisi metus arcu, interdum nisl." data-product-published="24 January 2026">
+            <a class="product-thumb-link" href="product-rolling-green-hills.html" aria-label="View Valen Ridge Sonata print details">
+              <img class="product-thumb" src="images/landscape_3.jpg" alt="Rolling Green Hills print thumbnail"> <!-- Image obtained from https://unsplash.com/ -->
+            </a>
+            <div class="product-details">
+              <h2 class="product-name">
+                <a class="product-name-link" href="product-rolling-green-hills.html">Valen Ridge Sonata</a>
+              </h2>
+              <p class="product-type">Rhoncus integer platea justo, facilisi metus arcu, interdum nisl.</p>
+              <p class="product-date">Published: 24 January 2026</p>
+              <p class="product-price">From £240.00 GBP</p>
+              <div class="product-purchase-controls">
+                <div class="product-quantity" role="group" aria-label="Quantity selector for Valen Ridge Sonata">
+                  <button class="qty-button qty-decrease" type="button" aria-label="Decrease quantity for Valen Ridge Sonata">-</button>
+                  <input class="qty-input" type="number" min="1" value="1" inputmode="numeric" aria-label="Quantity for Valen Ridge Sonata">
+                  <button class="qty-button qty-increase" type="button" aria-label="Increase quantity for Valen Ridge Sonata">+</button>
+                </div>
+                <button class="product-cta product-add-button" type="button">Add to basket</button>
+              </div>
+              <p class="product-feedback" aria-live="polite"></p>
+            </div>
+          </li>
+
+          <li class="product-card" data-product-id="two-pears-in-sunlight" data-product-name="Nexa Pearlight Study" data-product-price="170" data-product-image="images/still_life_4.jpg" data-product-type="Felis habitasse proin tempor, aliquam lectus urna, suscipit elit." data-product-published="06 February 2026">
+            <a class="product-thumb-link" href="product-two-pears-in-sunlight.html" aria-label="View Nexa Pearlight Study print details">
+              <img class="product-thumb" src="images/still_life_4.jpg" alt="Two Pears in Sunlight print thumbnail"> <!-- Image obtained from https://unsplash.com/ -->
+            </a>
+            <div class="product-details">
+              <h2 class="product-name">
+                <a class="product-name-link" href="product-two-pears-in-sunlight.html">Nexa Pearlight Study</a>
+              </h2>
+              <p class="product-type">Felis habitasse proin tempor, aliquam lectus urna, suscipit elit.</p>
+              <p class="product-date">Published: 06 February 2026</p>
+              <p class="product-price">From £170.00 GBP</p>
+              <div class="product-purchase-controls">
+                <div class="product-quantity" role="group" aria-label="Quantity selector for Nexa Pearlight Study">
+                  <button class="qty-button qty-decrease" type="button" aria-label="Decrease quantity for Nexa Pearlight Study">-</button>
+                  <input class="qty-input" type="number" min="1" value="1" inputmode="numeric" aria-label="Quantity for Nexa Pearlight Study">
+                  <button class="qty-button qty-increase" type="button" aria-label="Increase quantity for Nexa Pearlight Study">+</button>
+                </div>
+                <button class="product-cta product-add-button" type="button">Add to basket</button>
+              </div>
+              <p class="product-feedback" aria-live="polite"></p>
+            </div>
+          </li>
+
+          <li class="product-card" data-product-id="lemon-grove-still-life" data-product-name="Citrine Atelier Form" data-product-price="195" data-product-image="images/still_life_2.jpg" data-product-type="Pulvinar sociosqu eros massa, ullamcorper enim mi, accumsan quam." data-product-published="15 February 2026">
+            <a class="product-thumb-link" href="product-lemon-grove-still-life.html" aria-label="View Citrine Atelier Form print details">
+              <img class="product-thumb" src="images/still_life_2.jpg" alt="Lemon Grove Still Life print thumbnail"> <!-- Image obtained from https://unsplash.com/ -->
+            </a>
+            <div class="product-details">
+              <h2 class="product-name">
+                <a class="product-name-link" href="product-lemon-grove-still-life.html">Citrine Atelier Form</a>
+              </h2>
+              <p class="product-type">Pulvinar sociosqu eros massa, ullamcorper enim mi, accumsan quam.</p>
+              <p class="product-date">Published: 15 February 2026</p>
+              <p class="product-price">From £195.00 GBP</p>
+              <div class="product-purchase-controls">
+                <div class="product-quantity" role="group" aria-label="Quantity selector for Citrine Atelier Form">
+                  <button class="qty-button qty-decrease" type="button" aria-label="Decrease quantity for Citrine Atelier Form">-</button>
+                  <input class="qty-input" type="number" min="1" value="1" inputmode="numeric" aria-label="Quantity for Citrine Atelier Form">
+                  <button class="qty-button qty-increase" type="button" aria-label="Increase quantity for Citrine Atelier Form">+</button>
+                </div>
+                <button class="product-cta product-add-button" type="button">Add to basket</button>
+              </div>
+              <p class="product-feedback" aria-live="polite"></p>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer class="footer">
+      <!-- Footer social navigation icons -->
+      <nav class="footer-nav" aria-label="Footer social navigation">
+        <ul class="footer-nav-list">
+          <li>
+            <a class="footer-icon-link" href="#" aria-label="Instagram">
+              <img class="footer-icon" src="images/instagram.png" alt="Instagram"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+          <li>
+            <a class="footer-icon-link" href="#" aria-label="Facebook">
+              <img class="footer-icon" src="images/facebook.png" alt="Facebook"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+          <li>
+            <a class="footer-icon-link" href="#" aria-label="Email">
+              <img class="footer-icon" src="images/email.png" alt="Email"> <!-- Icon by https://icons8.com/  -->
+            </a>
+          </li>
+
+          <!-- Copyright text displayed next to the footer icons -->
+          <li class="footer-copy-item">
+            <span class="footer-copyright">© 2026 Jermaine Fotography</span>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
+
+  <!-- Shared cart utility script for basket persistence -->
+  <script src="inc/cart.js"></script>
+  <script src="inc/cart-ui.js"></script>
+
+  <!-- JS scripts for mobile navigation and product add-to-basket controls -->
+  <script>
+    /* Mobile navigation menu controls */
+    const menuToggleButton = document.querySelector(".menu-toggle");
+    const menuCloseButton = document.querySelector(".menu-close");
+    const primaryNavigation = document.getElementById("primary-nav");
+
+    if (menuToggleButton && primaryNavigation) {
+      function setMenuState(isOpen) {
+        primaryNavigation.classList.toggle("is-open", isOpen);
+        menuToggleButton.setAttribute("aria-expanded", String(isOpen));
+        document.body.classList.toggle("menu-open", isOpen);
+      }
+
+      menuToggleButton.addEventListener("click", function () {
+        const isOpen = !primaryNavigation.classList.contains("is-open");
+        setMenuState(isOpen);
+      });
+
+      if (menuCloseButton) {
+        menuCloseButton.addEventListener("click", function () {
+          setMenuState(false);
+        });
+      }
+
+      primaryNavigation.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (window.innerWidth <= 768) {
+            setMenuState(false);
+          }
+        });
+      });
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 768) {
+          setMenuState(false);
+        }
+      });
+    }
+
+    /* Product quantity and add-to-basket controls */
+    const productCards = document.querySelectorAll(".product-card");
+
+    productCards.forEach(function (card) {
+      const quantityInput = card.querySelector(".qty-input");
+      const decreaseButton = card.querySelector(".qty-decrease");
+      const increaseButton = card.querySelector(".qty-increase");
+      const addButton = card.querySelector(".product-add-button");
+      const feedbackLine = card.querySelector(".product-feedback");
+
+      if (!quantityInput) {
+        return;
+      }
+
+      function getSafeQuantity() {
+        const parsedValue = Number.parseInt(quantityInput.value, 10);
+        if (!Number.isFinite(parsedValue) || parsedValue < 1) {
+          return 1;
+        }
+        return parsedValue;
+      }
+
+      function setSafeQuantity(nextValue) {
+        quantityInput.value = String(Math.max(1, nextValue));
+      }
+
+      if (decreaseButton) {
+        decreaseButton.addEventListener("click", function () {
+          setSafeQuantity(getSafeQuantity() - 1);
+        });
+      }
+
+      if (increaseButton) {
+        increaseButton.addEventListener("click", function () {
+          setSafeQuantity(getSafeQuantity() + 1);
+        });
+      }
+
+      quantityInput.addEventListener("change", function () {
+        setSafeQuantity(getSafeQuantity());
+      });
+
+      if (addButton) {
+        addButton.addEventListener("click", function () {
+          if (!window.JermaineCart) {
+            return;
+          }
+
+          const selectedQuantity = getSafeQuantity();
+          const selectedProduct = {
+            id: card.dataset.productId,
+            name: card.dataset.productName,
+            price: Number.parseFloat(card.dataset.productPrice),
+            image: card.dataset.productImage,
+            type: card.dataset.productType,
+            publishedDate: card.dataset.productPublished
+          };
+
+          window.JermaineCart.addItem(selectedProduct, selectedQuantity);
+          if (feedbackLine) {
+            feedbackLine.textContent = selectedProduct.name + " added to basket.";
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

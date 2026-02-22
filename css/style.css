@@ -1,0 +1,1645 @@
+/* Shared text color palette */
+:root {
+  --logo-grey: #6a6a6a;
+}
+
+/* Global box model reset for predictable sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Base page typography and background */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--logo-grey);
+}
+
+/* Vertical page structure: header, content, footer */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header area styling */
+.header {
+  position: relative;
+  background-color: #ffffff;
+  color: var(--logo-grey);
+  padding: 16px 24px;
+  text-align: center;
+}
+
+/* Clickable logo link wrapper */
+.header-logo-link {
+  display: inline-block;
+}
+
+/* Logo image sizing and centering in the header */
+.header-logo {
+  display: block;
+  width: min(100%, 340px);
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Mobile menu button is hidden on larger screens */
+.menu-toggle {
+  display: none;
+}
+
+/* Individual horizontal bars for the mobile menu icon */
+.menu-toggle-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--logo-grey);
+}
+
+/* Mobile menu close button is hidden on desktop */
+.menu-close {
+  display: none;
+}
+
+/* Navigation container positioned below the logo */
+.main-nav {
+  margin-top: 12px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Social icon list inside the mobile menu (hidden on desktop) */
+.mobile-menu-social {
+  display: none;
+}
+
+/* Unordered navigation list layout */
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: clamp(12px, 1.2vw, 20px);
+  margin: 0;
+  padding: 0;
+  width: auto;
+  flex-wrap: nowrap;
+}
+
+/* Navigation list item positioning */
+.main-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Navigation link appearance */
+.main-nav-link {
+  color: var(--logo-grey);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  padding: 4px 8px;
+}
+
+/* Highlight active page link in the main navigation */
+.main-nav-link[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+}
+
+/* Dedicated basket section aligned with the logo center near top-right */
+.header-basket {
+  position: absolute;
+  top: clamp(58px, 4.6vw, 70px);
+  right: clamp(24px, 4vw, 64px);
+  transform: translateY(-50%);
+}
+
+/* Basket link wrapper */
+.basket-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 2px;
+  position: relative;
+}
+
+/* Small basket icon styling */
+.basket-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* Basket icon hover and focus effect */
+.basket-link:hover .basket-icon,
+.basket-link:focus .basket-icon {
+  opacity: 0.75;
+}
+
+/* Basket item count badge on top of the basket icon */
+.basket-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background-color: #222222;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+/* Reveal basket badge only when cart has items */
+.basket-count.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Floating add-to-basket notification anchored top-right */
+.cart-toast {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 2200;
+  width: min(92vw, 360px);
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
+  padding: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Visible state for add-to-basket notification */
+.cart-toast.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Close button for the floating add-to-basket notification */
+.cart-toast-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--logo-grey);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+/* Title text for add-to-basket notification */
+.cart-toast-title {
+  margin: 0 26px 10px 0;
+  color: var(--logo-grey);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Body row containing image and text */
+.cart-toast-body {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Product preview image inside the add-to-basket notification */
+.cart-toast-image {
+  width: 56px;
+  height: 68px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Text wrapper for add-to-basket notification content */
+.cart-toast-copy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+/* Product name shown in the notification */
+.cart-toast-item {
+  margin: 0;
+  color: var(--logo-grey);
+  font-size: 0.9rem;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+/* Basket quantity context shown under product name */
+.cart-toast-meta {
+  margin: 0;
+  color: var(--logo-grey);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+/* Call-to-action link to open basket page from notification */
+.cart-toast-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  color: #ffffff;
+  background-color: #222222;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 9px 12px;
+}
+
+/* Hover and focus states for notification basket link */
+.cart-toast-link:hover,
+.cart-toast-link:focus {
+  background-color: #2e2e2e;
+}
+
+/* Navigation link hover and keyboard-focus state */
+.main-nav-link:hover,
+.main-nav-link:focus {
+  text-decoration: underline;
+}
+
+/* Dropdown container built with native details/summary */
+.dropdown {
+  position: relative;
+}
+
+/* Summary row used as the clickable dropdown control */
+.dropdown-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Remove browser default summary marker so only custom arrow is shown */
+.dropdown-summary::marker,
+.dropdown-summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Dropdown summary hover and focus state */
+.dropdown-summary:hover .main-nav-link,
+.dropdown-summary:focus-visible .main-nav-link {
+  text-decoration: underline;
+}
+
+/* Custom dropdown arrow symbol */
+.dropdown-arrow {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* Dropdown submenu container */
+.dropdown-menu {
+  list-style: none;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 8px 0 0;
+  padding: 8px 0;
+  min-width: 150px;
+  background-color: #ffffff;
+  border: 1px solid #d8d8d8;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+}
+
+/* Dropdown links */
+.dropdown-link {
+  display: block;
+  color: var(--logo-grey);
+  text-decoration: none;
+  padding: 8px 14px;
+  white-space: nowrap;
+}
+
+/* Dropdown link hover and focus styles */
+.dropdown-link:hover,
+.dropdown-link:focus {
+  background-color: #f2f2f2;
+}
+
+/* Show dropdown when details element is open */
+.dropdown[open] .dropdown-menu {
+  display: block;
+}
+
+/* Rotate custom arrow when dropdown is open */
+.dropdown[open] .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Shared flex growth for top-level page main regions */
+.gallery-main,
+.about-main,
+.products-main,
+.product-detail-main,
+.cart-main {
+  flex: 1;
+}
+
+/* Shared centered width wrapper for gallery and product listing sections */
+.gallery-page-header,
+.photo-grid,
+.products-section {
+  width: min(94vw, 1400px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Main gallery section spacing */
+.gallery-main {
+  padding: 34px 0 46px;
+}
+
+/* Optional centered heading wrapper for single-category gallery pages */
+.gallery-page-header {
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+/* Large centered heading text used on landscape and still life pages */
+.gallery-page-title {
+  margin: 0;
+  color: var(--logo-grey);
+  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+/* Masonry-style gallery layout inspired by the reference display */
+.photo-grid {
+  column-count: 3;
+  column-gap: clamp(14px, 1.8vw, 24px);
+}
+
+/* Landscape page uses fewer columns so each image renders larger and taller */
+.landscape-main .photo-grid {
+  width: min(96vw, 1500px);
+  column-count: 2;
+  column-gap: clamp(16px, 2vw, 28px);
+}
+
+/* Slightly larger gaps between landscape cards to keep the taller layout balanced */
+.landscape-main .photo-card {
+  margin: 0 0 clamp(16px, 2vw, 28px);
+}
+
+/* Shared photo card styling */
+.photo-card {
+  margin: 0 0 clamp(14px, 1.8vw, 24px);
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+/* Shared image styling for natural photographic proportions */
+.photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* About page section spacing */
+.about-main {
+  padding: 34px 0 54px;
+}
+
+/* Two-column about layout with image left and text right */
+.about-layout {
+  width: min(97vw, 1500px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(380px, 0.9fr) minmax(540px, 1.3fr);
+  gap: clamp(22px, 3vw, 54px);
+  align-items: stretch;
+}
+
+/* About page image wrapper reset */
+.about-image-wrap {
+  margin: 0;
+  height: 100%;
+}
+
+/* About page feature image styling with stronger vertical emphasis */
+.about-image {
+  width: 100%;
+  height: clamp(620px, 74vh, 980px);
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* About page heading style */
+.about-content h1 {
+  margin: 0 0 22px;
+  color: var(--logo-grey);
+  font-size: clamp(2.2rem, 3.1vw, 3.35rem);
+  line-height: 1.08;
+}
+
+/* About page text column spacing and vertical fill */
+.about-content {
+  min-height: clamp(620px, 74vh, 980px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* About page paragraph style */
+.about-content p {
+  margin: 0 0 26px;
+  line-height: 2;
+  font-size: 1.04rem;
+}
+
+/* Remove trailing gap under the final about paragraph */
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Purchase prints page section spacing */
+.products-main {
+  padding: 34px 0 52px;
+}
+
+/* Purchase page heading block */
+.products-heading {
+  margin: 0;
+  text-align: left;
+}
+
+/* Purchase page small uppercase heading label */
+.products-kicker {
+  margin: 0;
+  color: var(--logo-grey);
+  font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.08;
+  text-transform: none;
+}
+
+/* Purchase page main heading style */
+.products-title {
+  margin: 30px 0 0;
+  color: var(--logo-grey);
+  font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  text-transform: none;
+}
+
+/* Product grid layout */
+.products-grid {
+  list-style: none;
+  margin: 26px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2vw, 28px);
+  align-items: start;
+}
+
+/* Product card base style */
+.product-card {
+  margin: 0;
+}
+
+/* Product image link wrapper */
+.product-thumb-link {
+  display: block;
+  text-decoration: none;
+}
+
+/* Product image sizing */
+.product-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+/* Product detail block below each thumbnail */
+.product-details {
+  padding: 12px 2px 0;
+}
+
+/* Product title styling */
+.product-name {
+  margin: 0 0 8px;
+  color: var(--logo-grey);
+  font-size: 1.04rem;
+  line-height: 1.3;
+}
+
+/* Product title link styling */
+.product-name-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Product title link hover and focus styles */
+.product-name-link:hover,
+.product-name-link:focus {
+  text-decoration: underline;
+}
+
+/* Product descriptor styling */
+.product-type {
+  margin: 0 0 9px;
+  color: var(--logo-grey);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+/* Product publication date styling */
+.product-date {
+  margin: 0 0 10px;
+  color: var(--logo-grey);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+/* Product price styling */
+.product-price {
+  margin: 0 0 12px;
+  color: var(--logo-grey);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* Shared outlined action button base for product and empty-cart actions */
+.product-cta,
+.cart-empty-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--logo-grey);
+  text-decoration: none;
+  border: 1px solid #d0d0d0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background-color: #ffffff;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Product call-to-action sizing */
+.product-cta {
+  padding: 8px 14px;
+  font-size: 0.86rem;
+}
+
+/* Product and empty-cart action hover/focus states */
+.product-cta:hover,
+.product-cta:focus,
+.cart-empty-link:hover,
+.cart-empty-link:focus {
+  background-color: #f6f6f6;
+}
+
+/* Shared product and detail action rows containing quantity and add button */
+.product-purchase-controls,
+.detail-action-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Shared quantity selector container style for product and basket */
+.product-quantity,
+.cart-quantity-control {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #d0d0d0;
+  background-color: #ffffff;
+}
+
+/* Product quantity selector minimum touch target */
+.product-quantity {
+  min-height: 38px;
+}
+
+/* Shared plus/minus quantity button base style */
+.qty-button,
+.cart-qty-button {
+  border: 0;
+  background: transparent;
+  color: var(--logo-grey);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Product card quantity button dimensions */
+.qty-button {
+  width: 34px;
+  height: 36px;
+}
+
+/* Basket table quantity button dimensions */
+.cart-qty-button {
+  width: 30px;
+  height: 34px;
+}
+
+/* Shared quantity numeric input base style */
+.qty-input,
+.cart-qty-input {
+  border: 0;
+  outline: none;
+  text-align: center;
+  color: var(--logo-grey);
+  background-color: #ffffff;
+  font-family: inherit;
+  appearance: textfield;
+}
+
+/* Product card quantity numeric field */
+.qty-input {
+  width: 50px;
+  font-size: 0.92rem;
+}
+
+/* Basket quantity numeric field */
+.cart-qty-input {
+  width: 46px;
+  font-size: 0.9rem;
+}
+
+/* Remove browser spinner controls from custom quantity fields */
+.qty-input::-webkit-inner-spin-button,
+.qty-input::-webkit-outer-spin-button,
+.cart-qty-input::-webkit-inner-spin-button,
+.cart-qty-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Product add-to-basket button sizing */
+.product-add-button {
+  min-height: 38px;
+}
+
+/* Shared add-to-basket feedback message style */
+.product-feedback,
+.detail-feedback {
+  min-height: 1.1rem;
+  color: var(--logo-grey);
+  font-size: 0.82rem;
+}
+
+/* Product add-to-basket feedback message spacing */
+.product-feedback {
+  margin: 8px 0 0;
+}
+
+/* Product detail page section spacing */
+.product-detail-main {
+  padding: 30px 0 54px;
+}
+
+/* Product detail content wrapper */
+.product-detail-section {
+  width: min(94vw, 1280px);
+  margin: 0 auto;
+}
+
+/* Product detail two-column layout */
+.product-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: start;
+}
+
+/* Product image presentation column */
+.detail-media {
+  margin: 0;
+  height: 100%;
+}
+
+/* Main product detail image with stronger vertical footprint */
+.detail-image {
+  width: 100%;
+  height: clamp(700px, 88vh, 1120px);
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Product information column */
+.detail-summary {
+  display: grid;
+  gap: 14px;
+}
+
+/* Product breadcrumb trail */
+.detail-breadcrumb {
+  margin: 0;
+  color: var(--logo-grey);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+/* Product detail title */
+.detail-title {
+  margin: 0;
+  color: var(--logo-grey);
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  line-height: 1.18;
+  font-weight: 500;
+}
+
+/* Product detail price row */
+.detail-price {
+  margin: 0;
+  color: var(--logo-grey);
+  font-size: 1.26rem;
+  font-weight: 700;
+}
+
+/* Shared secondary product detail metadata lines */
+.detail-note,
+.detail-published {
+  margin: 0;
+  color: var(--logo-grey);
+  font-size: 0.86rem;
+}
+
+/* Product tax and shipping note */
+.detail-note {
+  line-height: 1.5;
+}
+
+/* Product option selector group */
+.detail-option-group {
+  display: grid;
+  gap: 8px;
+}
+
+/* Product option label style */
+.detail-option-label {
+  color: var(--logo-grey);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Product variant select inputs */
+.detail-size-select,
+.detail-format-select {
+  border: 1px solid #d0d0d0;
+  min-height: 40px;
+  padding: 6px 10px;
+  color: var(--logo-grey);
+  background-color: #ffffff;
+  font-family: inherit;
+  font-size: 0.92rem;
+}
+
+/* Product detail quantity control wrapper */
+.detail-quantity {
+  min-height: 40px;
+}
+
+/* Product detail quantity input width override */
+.detail-qty-input {
+  width: 54px;
+}
+
+/* Product detail add-to-basket button */
+.detail-add-button {
+  min-height: 40px;
+  border: 0;
+  background-color: #222222;
+  color: #ffffff;
+  padding: 10px 22px;
+}
+
+/* Product detail add-to-basket hover and focus state */
+.detail-add-button:hover,
+.detail-add-button:focus {
+  background-color: #2e2e2e;
+}
+
+/* Product detail feedback message spacing */
+.detail-feedback {
+  margin: 0;
+}
+
+/* Product detail body section heading */
+.detail-section-heading {
+  margin: 10px 0 0;
+  color: var(--logo-grey);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Product detail description paragraphs */
+.detail-copy {
+  margin: 0;
+  color: var(--logo-grey);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+/* Product detail feature list */
+.detail-feature-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--logo-grey);
+  display: grid;
+  gap: 8px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* Basket page section spacing */
+.cart-main {
+  padding: 30px 0 52px;
+}
+
+/* Basket page content wrapper */
+.cart-section {
+  width: min(94vw, 1300px);
+  margin: 0 auto;
+}
+
+/* Basket heading row */
+.cart-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Basket title style */
+.cart-title {
+  margin: 0;
+  color: var(--logo-grey);
+  font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+/* Continue shopping link style */
+.cart-continue-link {
+  color: var(--logo-grey);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+/* Continue shopping hover and focus state */
+.cart-continue-link:hover,
+.cart-continue-link:focus {
+  text-decoration: underline;
+}
+
+/* Basket content split between items and summary */
+.cart-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+  gap: clamp(18px, 2.5vw, 36px);
+  align-items: start;
+}
+
+/* Scroll wrapper for the basket table on narrower viewports */
+.cart-table-wrap {
+  width: 100%;
+  overflow-x: visible;
+}
+
+/* Basket line items table */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 0;
+}
+
+/* Basket table heading cells */
+.cart-table th {
+  text-align: left;
+  color: var(--logo-grey);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 10px 0;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+/* Basket table data cells */
+.cart-table td {
+  vertical-align: middle;
+  padding: 16px 0;
+  border-bottom: 1px solid #ededed;
+}
+
+/* Basket product cell with thumbnail and metadata */
+.cart-product-cell {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 310px;
+  padding-right: 10px;
+}
+
+/* Basket thumbnail link wrapper */
+.cart-product-image-link {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Basket thumbnail image sizing */
+.cart-product-image {
+  width: 84px;
+  height: 105px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Basket product metadata wrapper */
+.cart-product-info {
+  display: grid;
+  gap: 4px;
+}
+
+/* Basket product title */
+.cart-product-name {
+  margin: 0;
+  color: var(--logo-grey);
+  font-size: 1rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+/* Basket product metadata lines */
+.cart-product-meta {
+  margin: 0;
+  color: var(--logo-grey);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+/* Basket quantity cell spacing */
+.cart-quantity-cell {
+  white-space: nowrap;
+}
+
+/* Basket per-item price and total cell styles */
+.cart-price-cell,
+.cart-total-cell {
+  color: var(--logo-grey);
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+/* Basket remove cell alignment */
+.cart-remove-cell {
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Basket remove button style */
+.cart-remove-button {
+  border: 0;
+  background: transparent;
+  color: var(--logo-grey);
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.82rem;
+  padding: 0;
+}
+
+/* Basket summary panel */
+.cart-summary {
+  border: 1px solid #e5e5e5;
+  padding: 18px;
+  background-color: #ffffff;
+}
+
+/* Basket summary heading */
+.cart-summary-title {
+  margin: 0;
+  color: var(--logo-grey);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Basket subtotal value */
+.cart-subtotal {
+  margin: 12px 0 14px;
+  color: var(--logo-grey);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* Basket summary note text */
+.cart-summary-note {
+  margin: 0 0 16px;
+  color: var(--logo-grey);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+/* Single checkout call-to-action button */
+.cart-checkout-button {
+  width: 100%;
+  border: 0;
+  background-color: #222222;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 14px;
+  cursor: pointer;
+}
+
+/* Basket checkout button hover and focus state */
+.cart-checkout-button:hover,
+.cart-checkout-button:focus {
+  opacity: 0.9;
+}
+
+/* Empty-cart state wrapper */
+.cart-empty {
+  border: 1px solid #e5e5e5;
+  padding: 24px;
+  text-align: center;
+}
+
+/* Empty-cart explanatory text */
+.cart-empty-text {
+  margin: 0 0 14px;
+  color: var(--logo-grey);
+}
+
+/* Empty-cart browse link button */
+.cart-empty-link {
+  padding: 9px 14px;
+  font-size: 0.84rem;
+}
+
+/* Footer area styling */
+.footer {
+  background-color: #ffffff;
+  color: var(--logo-grey);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 14px 12px;
+}
+
+/* Footer navigation wrapper */
+.footer-nav {
+  width: 100%;
+}
+
+/* Footer unordered list layout for social icons */
+.footer-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Footer list item containing copyright text */
+.footer-copy-item {
+  margin-left: 12px;
+}
+
+/* Shared icon link wrapper for footer and mobile menu */
+.footer-icon-link,
+.mobile-menu-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* Shared social icon sizing for footer and mobile menu */
+.footer-icon,
+.mobile-menu-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* Shared social icon hover and focus effect */
+.footer-icon-link:hover .footer-icon,
+.footer-icon-link:focus .footer-icon,
+.mobile-menu-icon-link:hover .mobile-menu-icon,
+.mobile-menu-icon-link:focus .mobile-menu-icon {
+  opacity: 0.75;
+}
+
+/* Footer copyright text style */
+.footer-copyright {
+  color: var(--logo-grey);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Stack about content on medium and smaller screens */
+@media (max-width: 960px) {
+  .about-main {
+    padding: 26px 0 34px;
+  }
+
+  .about-layout {
+    width: min(96vw, 840px);
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  /* Let text size collapse naturally once about layout stacks */
+  .about-content {
+    min-height: 0;
+  }
+
+  /* Keep about image tall on tablets without overwhelming the viewport */
+  .about-image {
+    height: clamp(420px, 62vh, 640px);
+  }
+}
+
+/* Use two product columns on medium screens */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Stack product detail layout into a single column on medium screens */
+  .product-detail-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* Keep product detail image tall on medium screens */
+  .detail-image {
+    height: clamp(560px, 78vh, 900px);
+  }
+
+  /* Stack basket summary under table on medium screens */
+  .cart-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive behavior: stack columns on smaller screens */
+@media (max-width: 768px) {
+  /* Reduce logo size on mobile so header controls have clearer spacing */
+  .header-logo {
+    width: min(100%, 300px);
+  }
+
+  /* Lock background scroll when the full-screen mobile menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* Show three-line menu button aligned with the logo center on mobile */
+  .menu-toggle {
+    display: inline-flex;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    z-index: 20;
+    transform: translateY(-50%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 6px;
+    margin: 0;
+  }
+
+  /* Hide the hamburger while the mobile menu is open */
+  body.menu-open .menu-toggle {
+    display: none;
+  }
+
+  /* Hide navigation by default on mobile; menu button reveals a full-screen panel */
+  .main-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    width: 100vw;
+    max-width: none;
+    height: 100dvh;
+    margin: 0;
+    background-color: #ffffff;
+    padding: 72px 24px 24px;
+    overflow-y: auto;
+  }
+
+  /* Show full-screen navigation when toggled open by the menu button */
+  .main-nav.is-open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Show close control at top-right inside the opened mobile menu */
+  .main-nav.is-open .menu-close {
+    display: inline-flex;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    color: transparent;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    white-space: nowrap;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  /* Draw a true close icon with two crossing lines */
+  .main-nav.is-open .menu-close::before,
+  .main-nav.is-open .menu-close::after {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 2.5px;
+    background-color: var(--logo-grey);
+    border-radius: 999px;
+  }
+
+  .main-nav.is-open .menu-close::before {
+    transform: rotate(45deg);
+  }
+
+  .main-nav.is-open .menu-close::after {
+    transform: rotate(-45deg);
+  }
+
+  /* Subtle hover/focus state for the close icon button */
+  .main-nav.is-open .menu-close:hover,
+  .main-nav.is-open .menu-close:focus {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  /* Strong keyboard focus ring for accessibility */
+  .main-nav.is-open .menu-close:focus-visible {
+    outline: 2px solid #bcbcbc;
+    outline-offset: 2px;
+  }
+
+  /* Arrange the three mobile menu links centered with even spacing */
+  .main-nav-list {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex: 1;
+    text-align: center;
+  }
+
+  /* Keep the dropdown control centered inside mobile menu */
+  .dropdown-summary {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Render dropdown items inline and centered in the mobile menu flow */
+  .dropdown-menu {
+    position: static;
+    margin: 6px 0 0;
+    padding: 6px 0 0;
+    border: 0;
+    box-shadow: none;
+    min-width: 0;
+    background: transparent;
+    width: 100%;
+  }
+
+  /* Center dropdown links in mobile menu */
+  .dropdown-link {
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  /* Mobile social links fixed to the bottom area of the full-screen menu */
+  .mobile-menu-social {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: auto 0 0;
+    padding: 0;
+  }
+
+  /* Keep basket icon aligned with the logo center on small screens */
+  .header-basket {
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+  }
+
+  /* Keep basket icon size consistent between mobile and desktop */
+  .basket-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Keep basket count badge size consistent between mobile and desktop */
+  .basket-count {
+    top: -8px;
+    right: -10px;
+    min-width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 0.7rem;
+    padding: 0 5px;
+  }
+
+  /* Keep floating add-to-basket notification clear of mobile header */
+  .cart-toast {
+    top: 10px;
+    right: 10px;
+    width: min(94vw, 340px);
+  }
+
+  /* Use a simpler balanced gallery structure on tablets/phones */
+  .gallery-main {
+    padding: 22px 0 30px;
+  }
+
+  .photo-grid {
+    width: min(96vw, 700px);
+    column-count: 2;
+    column-gap: 12px;
+  }
+
+  /* Keep landscape page images taller on small screens by using a single column */
+  .landscape-main .photo-grid {
+    width: min(96vw, 760px);
+    column-count: 1;
+    column-gap: 0;
+  }
+
+  .photo-card {
+    margin-bottom: 12px;
+  }
+
+  /* Tighten purchase prints spacing on smaller screens */
+  .products-main {
+    padding: 22px 0 34px;
+  }
+
+  /* Keep products wrapper balanced on mobile */
+  .products-section {
+    width: min(96vw, 720px);
+  }
+
+  /* Keep product detail wrapper balanced on mobile */
+  .product-detail-section {
+    width: min(96vw, 860px);
+  }
+
+  /* Mobile product detail section spacing */
+  .product-detail-main {
+    padding: 22px 0 34px;
+  }
+
+  /* Keep product detail image visually prominent on mobile */
+  .detail-image {
+    height: clamp(430px, 68vh, 680px);
+  }
+
+  /* Keep product heading visually compact on mobile */
+  .products-grid {
+    margin-top: 20px;
+    gap: 16px;
+  }
+
+  /* Adjust product metadata spacing on mobile */
+  .product-details {
+    padding-top: 10px;
+  }
+
+  /* Stack product action controls cleanly on mobile */
+  .product-purchase-controls,
+  .detail-action-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Stretch quantity selectors and add buttons on mobile */
+  .product-quantity,
+  .product-add-button,
+  .detail-quantity,
+  .detail-add-button {
+    width: 100%;
+  }
+
+  /* Keep mobile quantity selector buttons separated */
+  .product-quantity {
+    justify-content: space-between;
+  }
+
+  /* Mobile basket section spacing */
+  .cart-main {
+    padding: 22px 0 34px;
+  }
+
+  /* Keep basket wrapper balanced on mobile */
+  .cart-section {
+    width: min(96vw, 860px);
+  }
+
+  /* Stack basket heading elements naturally on mobile */
+  .cart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* Mobile basket rows: remove horizontal table behavior and stack content */
+  .cart-table-wrap {
+    overflow-x: visible;
+  }
+
+  /* Mobile basket table: flatten to block layout to avoid sideways scrolling */
+  .cart-table,
+  .cart-table thead,
+  .cart-table tbody,
+  .cart-table tr,
+  .cart-table th,
+  .cart-table td {
+    display: block;
+    width: 100%;
+  }
+
+  /* Mobile basket table header is hidden because labels are shown per row */
+  .cart-table thead {
+    display: none;
+  }
+
+  /* Mobile basket row card styling */
+  .cart-row {
+    border-bottom: 1px solid #ededed;
+    padding: 14px 0;
+  }
+
+  /* Remove per-cell row borders to prevent doubled dividers on mobile cards */
+  .cart-table td {
+    border-bottom: 0;
+    padding: 6px 0;
+  }
+
+  /* Mobile product cell: keep image and details side-by-side without overflow */
+  .cart-product-cell {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 12px;
+    min-width: 0;
+    padding-right: 0;
+    align-items: start;
+  }
+
+  /* Mobile basket thumbnail size tuning */
+  .cart-product-image {
+    width: 76px;
+    height: 96px;
+  }
+
+  /* Shared mobile row label/value layout for price, quantity, and total */
+  .cart-price-cell,
+  .cart-quantity-cell,
+  .cart-total-cell {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 10px;
+    align-items: center;
+    white-space: normal;
+    font-size: 0.9rem;
+  }
+
+  /* Mobile row labels to mirror cart column names without table headers */
+  .cart-price-cell::before,
+  .cart-quantity-cell::before,
+  .cart-total-cell::before {
+    color: var(--logo-grey);
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  /* Mobile label text for each basket data line */
+  .cart-price-cell::before {
+    content: "Price";
+  }
+
+  .cart-quantity-cell::before {
+    content: "Quantity";
+  }
+
+  .cart-total-cell::before {
+    content: "Total";
+  }
+
+  /* Keep quantity selector aligned to the left on mobile rows */
+  .cart-quantity-control {
+    justify-self: start;
+  }
+
+  /* Mobile remove action aligns under the data rows */
+  .cart-remove-cell {
+    text-align: left;
+    margin-top: 2px;
+  }
+
+  /* Keep basket subtotal card spacing compact on mobile */
+  .cart-summary {
+    padding: 16px;
+  }
+}
+
+/* Single-column gallery on narrow mobile screens */
+@media (max-width: 520px) {
+  .photo-grid {
+    column-count: 1;
+  }
+
+  /* Stack purchase cards into one column on narrow mobile screens */
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Keep mobile basket row labels compact on very narrow screens */
+  .cart-price-cell,
+  .cart-quantity-cell,
+  .cart-total-cell {
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: 8px;
+  }
+}
