@@ -148,7 +148,7 @@
       const sizeSlug = toSlug(selectedVariant.sizeLabel);
       const productName = String(productPage.dataset.productName || "Print");
       const productType = String(
-        productPage.dataset.productType || "Vestibulum mattis sem vitae neque auctor, vel dictum tortor ullamcorper."
+        productPage.dataset.productType || "Fine art print on museum-grade matte paper."
       );
       const publishedDate = String(productPage.dataset.productPublished || "");
 

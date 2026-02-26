@@ -91,10 +91,10 @@
         <article class="about-content">
           <h1>Jermaine Fotography</h1>
           <p>
-            Donec vehicula, felis at bibendum tempus, magna enim eleifend nunc, ut consectetur metus leo ut metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat. In rutrum magna elit. Phasellus mollis vestibulum libero nec fermentum. Suspendisse et quam velit. Maecenas cursus augue nisi, sed pretium diam consectetur id. Nulla a magna in tortor imperdiet fermentum. Aenean eget lorem diam. Etiam felis purus, eleifend fringilla felis ac, tincidunt malesuada lacus. Fusce at lectus in felis lacinia cursus.
+            Jermaine Fotography is an independent fine art studio focused on landscape and still life photography. Each collection is developed through careful planning, natural light studies, and a strong emphasis on balance, tone, and atmosphere.
           </p>
           <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas in vehicula odio. Morbi ligula est, rhoncus at velit quis, interdum rhoncus leo. Sed sapien nibh, auctor laoreet elit in, porta fermentum justo. Integer dignissim maximus massa, et molestie eros. Praesent vel massa turpis. Cras at mauris neque. Praesent semper ligula sapien, posuere vehicula enim porttitor nec. Aliquam erat volutpat. Cras ornare pellentesque aliquet.
+            Every image is produced as a high-quality archival print with close attention to colour accuracy and finish. The goal is to create timeless photographic pieces that feel calm, refined, and easy to live with in both modern and classic interiors.
           </p>
         </article>
       </section>
@@ -130,48 +130,9 @@
     </footer>
   </div>
 
-  <!-- Shared scripts for basket state and header cart badge UI -->
+  <!-- Shared scripts for basket state, badge UI, and mobile navigation -->
   <script src="inc/cart.js"></script>
   <script src="inc/cart-ui.js"></script>
-
-  <!-- JS script to open and close the mobile navigation menu -->
-  <script>
-    const menuToggleButton = document.querySelector(".menu-toggle");
-    const menuCloseButton = document.querySelector(".menu-close");
-    const primaryNavigation = document.getElementById("primary-nav");
-
-    if (menuToggleButton && primaryNavigation) {
-      function setMenuState(isOpen) {
-        primaryNavigation.classList.toggle("is-open", isOpen);
-        menuToggleButton.setAttribute("aria-expanded", String(isOpen));
-        document.body.classList.toggle("menu-open", isOpen);
-      }
-
-      menuToggleButton.addEventListener("click", function () {
-        const isOpen = !primaryNavigation.classList.contains("is-open");
-        setMenuState(isOpen);
-      });
-
-      if (menuCloseButton) {
-        menuCloseButton.addEventListener("click", function () {
-          setMenuState(false);
-        });
-      }
-
-      primaryNavigation.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", function () {
-          if (window.innerWidth <= 768) {
-            setMenuState(false);
-          }
-        });
-      });
-
-      window.addEventListener("resize", function () {
-        if (window.innerWidth > 768) {
-          setMenuState(false);
-        }
-      });
-    }
-  </script>
+  <script src="inc/site-nav.js"></script>
 </body>
 </html>

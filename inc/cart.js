@@ -14,36 +14,45 @@
     );
   }
 
-  /* Resolve a placeholder product type sentence from a known product id prefix */
-  function getPlaceholderTypeById(productId) {
+  /* Resolve a standard product type sentence from a known product id prefix */
+  function getDefaultTypeById(productId) {
     if (productId.startsWith("turquoise-alpine-lake")) {
-      return "Mollis cras tincidunt lacus, posuere varius nibh, dictum sapien.";
+      return "Limited edition landscape print on museum-grade matte paper.";
     }
 
     if (productId.startsWith("sunflowers-and-lemons")) {
-      return "Vitae penatibus torquent curae, fringilla sem donec, gravida erat.";
+      return "Limited edition still life print on museum-grade matte paper.";
     }
 
     if (productId.startsWith("rolling-green-hills")) {
-      return "Rhoncus integer platea justo, facilisi metus arcu, interdum nisl.";
+      return "Limited edition landscape print on museum-grade matte paper.";
     }
 
     if (productId.startsWith("two-pears-in-sunlight")) {
-      return "Felis habitasse proin tempor, aliquam lectus urna, suscipit elit.";
+      return "Limited edition still life print on museum-grade matte paper.";
     }
 
     if (productId.startsWith("lemon-grove-still-life")) {
-      return "Pulvinar sociosqu eros massa, ullamcorper enim mi, accumsan quam.";
+      return "Limited edition still life print on museum-grade matte paper.";
     }
 
     return "";
   }
 
-  /* Replace legacy product-type labels with placeholder text while preserving variant suffixes */
+  /* Replace outdated product-type labels with current text while preserving variant suffixes */
   function normalizeProductType(productId, productType) {
-    const placeholderType = getPlaceholderTypeById(productId);
-    if (!placeholderType || !productType) {
+    const defaultType = getDefaultTypeById(productId);
+    if (!defaultType || !productType) {
       return productType;
+    }
+
+    if (productType.startsWith(defaultType)) {
+      return productType;
+    }
+
+    const variantMarkerIndex = productType.indexOf(" | Size:");
+    if (variantMarkerIndex >= 0) {
+      return defaultType + productType.slice(variantMarkerIndex);
     }
 
     const legacyPrefixes = [
@@ -56,12 +65,12 @@
       return productType.startsWith(prefix);
     });
 
-    if (!matchedLegacyPrefix) {
-      return productType;
+    if (matchedLegacyPrefix) {
+      const variantSuffix = productType.slice(matchedLegacyPrefix.length);
+      return defaultType + variantSuffix;
     }
 
-    const variantSuffix = productType.slice(matchedLegacyPrefix.length);
-    return placeholderType + variantSuffix;
+    return defaultType;
   }
 
   /* Return a safe cart array from local storage */

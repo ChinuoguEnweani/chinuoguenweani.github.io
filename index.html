@@ -153,48 +153,9 @@
     </footer>
   </div>
 
-  <!-- Shared scripts for basket state and header cart badge UI -->
+  <!-- Shared scripts for basket state, badge UI, and mobile navigation -->
   <script src="inc/cart.js"></script>
   <script src="inc/cart-ui.js"></script>
-
-  <!-- JS script to open and close the mobile navigation menu -->
-  <script>
-    const menuToggleButton = document.querySelector(".menu-toggle");
-    const menuCloseButton = document.querySelector(".menu-close");
-    const primaryNavigation = document.getElementById("primary-nav");
-
-    if (menuToggleButton && primaryNavigation) {
-      function setMenuState(isOpen) {
-        primaryNavigation.classList.toggle("is-open", isOpen);
-        menuToggleButton.setAttribute("aria-expanded", String(isOpen));
-        document.body.classList.toggle("menu-open", isOpen);
-      }
-
-      menuToggleButton.addEventListener("click", function () {
-        const isOpen = !primaryNavigation.classList.contains("is-open");
-        setMenuState(isOpen);
-      });
-
-      if (menuCloseButton) {
-        menuCloseButton.addEventListener("click", function () {
-          setMenuState(false);
-        });
-      }
-
-      primaryNavigation.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", function () {
-          if (window.innerWidth <= 768) {
-            setMenuState(false);
-          }
-        });
-      });
-
-      window.addEventListener("resize", function () {
-        if (window.innerWidth > 768) {
-          setMenuState(false);
-        }
-      });
-    }
-  </script>
+  <script src="inc/site-nav.js"></script>
 </body>
 </html>
